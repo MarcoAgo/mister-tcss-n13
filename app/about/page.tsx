@@ -7,7 +7,7 @@ export default function Home() {
         <main style={{ width: '100vw', height: '100vh' }}>
             <div className="flex items-center justify-center h-full w-full">
                 <h1 className="text-3xl font-bold">
-                    Hello world!
+                    About
                 </h1>
             </div>
         </main>
