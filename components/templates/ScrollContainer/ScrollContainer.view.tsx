@@ -12,38 +12,24 @@ const ScrollContainerView: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     useEffect(() => {
         const lenisInit = new Lenis({
-            // wrapper: wrapperRef.current,
-            // content: wrapperRef.current,
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical', // vertical, horizontal
-            gestureDirection: 'vertical', // vertical, horizontal, both
+            direction: 'vertical',
+            gestureDirection: 'vertical',
             smooth: true,
             mouseMultiplier: 1,
             smoothTouch: false,
             touchMultiplier: 2,
         })
 
-        console.log('QUAAAA')
-
         setLenis(lenisInit)
     }, [wrapperRef.current])
-
-    useEffect(() => {
-        if (lenis) {
-            lenis.on('scroll', (e: any) => {
-                console.log('scrolling', e)
-            })
-        }
-    }, [lenis])
 
     useAnimationFrame((time) => {
         if (lenis) {
             lenis.raf(time)
         }
     })
-
-    console.log('lenis', lenis)
 
     return (
         <ScrollContext.Provider value={{ lenis: lenis as Lenis }}>

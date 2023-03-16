@@ -16,8 +16,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
             </head>
             <body className="overflow-x-hidden flex justify-end w-screen">
-                <SidebarNavigation />
                 <ScrollContainer>
+                    <SidebarNavigation />
                     {children}
                 </ScrollContainer>
             </body>
