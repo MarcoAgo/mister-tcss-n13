@@ -1,15 +1,16 @@
-import { Inter } from '@next/font/google'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
+function Home() {
 
-export default function Home() {
     return (
-        <main style={{ width: '100vw', height: '100vh' }}>
-            <div className="flex items-center justify-center h-full w-full">
-                <h1 className="text-3xl font-bold">
-                    Hello world!
-                </h1>
+        <main className="w-screen h-auto relative">
+            <div>
+                <p>ciao</p>
+                <div style={{ height: '150vh' }}></div>
+                <p>ciao2</p>
             </div>
         </main>
     )
 }
+
+export default Home
