@@ -8,12 +8,8 @@ function Home() {
     console.log(lenis)
 
     return (
-        <main className="w-auto h-auto relative">
-            <div>
-                <p>ciao</p>
-                <div style={{ height: '150vh' }}></div>
-                <p>ciao2</p>
-            </div>
+        <main className="w-auto h-auto relative z-40">
+            
         </main>
     )
 }
