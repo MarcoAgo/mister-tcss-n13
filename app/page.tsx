@@ -1,15 +1,19 @@
 'use client'
 
-import { useScrollContext } from "@/components/templates/ScrollContainer/ScrollContainer.view"
+import { TitleAnim } from "@/components/atoms/TitleAnim"
+import Text from "@/components/atoms/Text"
+import { TextColorEnum, TextTypeEnum } from "@/components/atoms/Text/Text.types"
 
 function Home() {
-    const { lenis } = useScrollContext()
-
-    console.log(lenis)
-
     return (
-        <main className="w-auto h-auto relative z-40">
-            
+        <main className="w-full h-screen relative z-40">
+            <div className="flex items-center justify-center w-full h-full text-superlightgray">
+                <TitleAnim>
+                    <Text as="h1" type={TextTypeEnum.HEADING1}>
+                        Hi bitches!
+                    </Text>
+                </TitleAnim>
+            </div>
         </main>
     )
 }

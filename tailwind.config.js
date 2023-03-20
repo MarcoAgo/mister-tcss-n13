@@ -12,7 +12,9 @@ module.exports = {
         },
         colors: {
             darkgray: '#191919',
-            superlightgray: '#D9D9D9'
+            superlightgray: '#D9D9D9',
+            text: '#7B7B7B',
+            white: '#fff',
         },
         fontFamily: {
             primary: ['Montserrat', 'sans-serif'],

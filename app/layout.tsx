@@ -3,8 +3,17 @@
 import './globals.output.css'
 import SidebarNavigation from '@/components/molecules/SidebarNavigation'
 import ScrollContainer from '@/components/templates/ScrollContainer'
+import useMenu from '@/store/menu/useMenu'
+import classNames from 'classnames'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const { isOpen } = useMenu()
+
+    const classname = classNames({
+        'z-5 relative': !isOpen,
+        'z-0 relative': isOpen
+    })
+
     return (
         <html>
             <head>
@@ -15,10 +24,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     rel="stylesheet"
                 />
             </head>
-            <body className="overflow-x-hidden flex justify-end w-screen">
+            <body className="overflow-x-hidden flex justify-end w-screen bg-darkgray">
                 <ScrollContainer>
                     <SidebarNavigation />
-                    {children}
+                    <div className={classname}>
+                        {children}
+                    </div>
                 </ScrollContainer>
             </body>
         </html>

@@ -13,3 +13,7 @@ export type MenuButtonProps = {
     handleMenuClick: () => void
     handleMouseEvent: (status: SidebarStatusEnum) => void 
 }
+
+export type MenuContentProps = {
+    
+}
