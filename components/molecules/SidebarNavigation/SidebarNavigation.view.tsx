@@ -6,6 +6,7 @@ import { motion, useAnimationControls } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { SidebarNavigationProps, SidebarStatus, SidebarStatusEnum } from './SidebarNavigation.types'
 import { sidebarEnterVariant, sidebarNavigationVariants } from './SidebarNavigation.variants'
+import DarkModeButton from './_partial/DarkModeButton'
 import MenuButton from './_partial/MenuButton'
 
 const SidebarNavigationView: React.FC<SidebarNavigationProps> = () => {
@@ -67,12 +68,13 @@ const SidebarNavigationView: React.FC<SidebarNavigationProps> = () => {
                     />
                 </svg>
             </div>
-            <div className="flex h-screen items-center justify-center w-20 bg-superlightgray">
+            <div className="flex h-screen items-center justify-center w-20 bg-superlightgray flex-col">
                 <MenuButton
                     handleMenuClick={handleMenuClick}
                     handleMouseEvent={handleMouseEvent}
                     status={status}
                 />
+                <DarkModeButton />
             </div>
         </motion.div>
     )

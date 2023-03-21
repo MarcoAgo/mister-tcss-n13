@@ -5,9 +5,11 @@ import SidebarNavigation from '@/components/molecules/SidebarNavigation'
 import ScrollContainer from '@/components/templates/ScrollContainer'
 import useMenu from '@/store/menu/useMenu'
 import classNames from 'classnames'
+import useLayout from '@/store/layout/useLayout'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     const { isOpen } = useMenu()
+    const { theme } = useLayout()
 
     const classname = classNames({
         'z-5 relative': !isOpen,
@@ -15,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     })
 
     return (
-        <html>
+        <html className={theme}>
             <head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -24,7 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     rel="stylesheet"
                 />
             </head>
-            <body className="overflow-x-hidden flex justify-end w-screen bg-darkgray">
+            <body className="overflow-x-hidden flex justify-end w-screen dark:bg-darkgray bg-superlightgray" style={{
+                transition: 'all 0.5s ease-in-out'
+            }}>
                 <ScrollContainer>
                     <SidebarNavigation />
                     <div className={classname}>

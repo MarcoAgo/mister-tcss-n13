@@ -3,7 +3,7 @@ import { TextColorEnum, TextProps, TextTypeEnum } from "./Text.types"
 
 const TextView: React.FC<TextProps> = (props) => {
     const { as, color, children, type } = props
-    const Component = as || 'p'
+    const Component = as || 'span'
 
     const typeClass = classNames({
         'text-6xl font-medium uppercase': TextTypeEnum.HEADING1 === type,
@@ -13,8 +13,8 @@ const TextView: React.FC<TextProps> = (props) => {
     })
 
     const colorClass = classNames({
-        [TextColorEnum.PARAGRAPH]: 'text-text',
-        [TextColorEnum.PRIMARY]: 'text-darkgray'
+        'text-superlightgray dark:text-darkgray': color === TextColorEnum.LIGHT,
+        'text-darkgray dark:text-superlightgray': color === TextColorEnum.DARK,
     })
 
     return (

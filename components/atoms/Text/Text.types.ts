@@ -10,8 +10,8 @@ export enum TextTypeEnum {
 }
 
 export enum TextColorEnum {
-    PRIMARY = 'primary',
-    SECONDARY = 'secondary',
+    LIGHT = 'light',
+    DARK = 'dark',
     PARAGRAPH = 'paragraph',
 }
 

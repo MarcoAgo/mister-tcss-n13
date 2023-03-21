@@ -1,4 +1,4 @@
-import { create, StateCreator, StoreApi, UseBoundStore } from "zustand"
+import { create } from "zustand"
 
 export type UseMenuStore = {
     isOpen: boolean
