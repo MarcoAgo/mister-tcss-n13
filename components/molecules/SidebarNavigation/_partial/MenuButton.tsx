@@ -1,9 +1,12 @@
 import { MenuButtonProps, SidebarStatusEnum } from "../SidebarNavigation.types";
 import { motion } from "framer-motion";
 import { menuButtonLineVariantBottom, menuButtonLineVariantTop, menuButtonVariantBL, menuButtonVariantBR, menuButtonVariantTL, menuButtonVariantTR, testVariant } from "../SidebarNavigation.variants";
+import useLayout from "@/store/layout/useLayout";
+import { variantConverterFactory } from "@/hooks/useVariantConverter";
 
 const MenuButton: React.FC<MenuButtonProps> = (props) => {
     const { handleMouseEvent, handleMenuClick, status } = props
+    const { theme } = useLayout()
 
     return (
         <motion.div
@@ -15,34 +18,34 @@ const MenuButton: React.FC<MenuButtonProps> = (props) => {
             animate={status}
         >
             <motion.div
-                variants={menuButtonVariantTL}
+                variants={variantConverterFactory(menuButtonVariantTL, theme)}
                 animate={status}
-                className='absolute top-0 left-0 bg-darkgray h-2 w-2 z-20 rounded-3xl'
+                className='absolute top-0 left-0 dark:bg-darkgray bg-superlightgray h-2 w-2 z-20 rounded-3xl'
             />
             <motion.div
-                variants={menuButtonVariantTR}
+                variants={variantConverterFactory(menuButtonVariantTR, theme)}
                 animate={status}
-                className='absolute top-0 right-0 bg-darkgray h-2 w-2 z-20 rounded-3xl'
+                className='absolute top-0 right-0 dark:bg-darkgray bg-superlightgray h-2 w-2 z-20 rounded-3xl'
             />
             <motion.div
-                variants={menuButtonVariantBL}
+                variants={variantConverterFactory(menuButtonVariantBL, theme)}
                 animate={status}
-                className='absolute bottom-0 right-0 bg-darkgray h-2 w-2 z-20 rounded-3xl'
+                className='absolute bottom-0 right-0 dark:bg-darkgray bg-superlightgrayh-2 w-2 z-20 rounded-3xl'
             />
             <motion.div
-                variants={menuButtonVariantBR}
+                variants={variantConverterFactory(menuButtonVariantBR, theme)}
                 animate={status}
-                className='absolute bottom-0 left-0 bg-darkgray h-2 w-2 z-20 rounded-3xl'
+                className='absolute bottom-0 left-0 dark:bg-darkgray bg-superlightgray h-2 w-2 z-20 rounded-3xl'
             />
             <motion.div
-                variants={menuButtonLineVariantTop}
+                variants={variantConverterFactory(menuButtonLineVariantTop, theme)}
                 animate={status}
-                className='w-7 h-2 rounded-3xl absolute top-0 bg-darkgray origin-center'
+                className='w-7 h-2 rounded-3xl absolute top-0 dark:bg-darkgray bg-superlightgray origin-center'
             />
             <motion.div
-                variants={menuButtonLineVariantBottom}
+                variants={variantConverterFactory(menuButtonLineVariantBottom, theme)}
                 animate={status}
-                className='w-7 h-2 rounded-3xl absolute bottom-0 bg-darkgray origin-center'
+                className='w-7 h-2 rounded-3xl absolute bottom-0 dark:bg-darkgray bg-superlightgray origin-center'
             />
         </motion.div>
     )
