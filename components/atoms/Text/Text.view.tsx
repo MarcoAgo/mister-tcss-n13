@@ -2,7 +2,7 @@ import classNames from "classnames"
 import { TextColorEnum, TextProps, TextTypeEnum } from "./Text.types"
 
 const TextView: React.FC<TextProps> = (props) => {
-    const { as, color, children, type } = props
+    const { as, color, children, type, className } = props
     const Component = as || 'span'
 
     const typeClass = classNames({
@@ -15,10 +15,11 @@ const TextView: React.FC<TextProps> = (props) => {
     const colorClass = classNames({
         'text-superlightgray dark:text-darkgray': color === TextColorEnum.LIGHT,
         'text-darkgray dark:text-superlightgray': color === TextColorEnum.DARK,
+        'text-text': color === TextColorEnum.TEXT
     })
 
     return (
-        <Component className={`${typeClass}${color ? ` ${colorClass}` : ''}`}>
+        <Component className={`${typeClass}${color ? ` ${colorClass}` : ''}${className ? ` ${className}` : ''}`}>
             {children}
         </Component>
     )

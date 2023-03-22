@@ -21,7 +21,7 @@ export const titleVariant: Variants = {
         }
     },
     exit: {
-        y: '-100%',
+        y: '-300%',
         opacity: 0,
         transition: {
             type: 'tween',

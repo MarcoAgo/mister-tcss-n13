@@ -6,22 +6,19 @@ import { titleVariant } from "./TitleAnim.variants"
 const TitleAnimView: React.FC<TitleAnimProps> = (props) => {
     const { children } = props
     const ref = useRef<HTMLDivElement>(null)
-    const inView = useInView(ref)
 
     return (
         <div className="overflow-hidden h-fit w-fit" ref={ref}>
-            <AnimatePresence>
-                {inView && (
-                    <motion.div
-                        variants={titleVariant}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                    >
-                        {children}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <motion.div
+                variants={titleVariant}
+                initial="initial"
+                animate="animate"
+                whileInView="animate"
+                exit="exit"
+                viewport={{ once: true }}
+            >
+                {children}
+            </motion.div>
         </div>
     )
 }

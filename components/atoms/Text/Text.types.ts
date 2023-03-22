@@ -12,7 +12,7 @@ export enum TextTypeEnum {
 export enum TextColorEnum {
     LIGHT = 'light',
     DARK = 'dark',
-    PARAGRAPH = 'paragraph',
+    TEXT = 'TEXT',
 }
 
 export type TextProps = {
@@ -20,4 +20,5 @@ export type TextProps = {
     children: ReactNode
     color?: TextColorEnum
     as?: keyof HTMLElementTagNameMap
+    className?: string
 }

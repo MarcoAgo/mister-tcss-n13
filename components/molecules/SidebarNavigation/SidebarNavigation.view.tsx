@@ -9,6 +9,7 @@ import { SidebarNavigationProps, SidebarStatus, SidebarStatusEnum } from './Side
 import { sidebarEnterVariant, sidebarNavigationVariants } from './SidebarNavigation.variants'
 import DarkModeButton from './_partial/DarkModeButton'
 import MenuButton from './_partial/MenuButton'
+import MenuContent from './_partial/MenuContent'
 
 const SidebarNavigationView: React.FC<SidebarNavigationProps> = () => {
     const [status, setStatus] = useState<SidebarStatus>(SidebarStatusEnum.NONE)
@@ -77,6 +78,7 @@ const SidebarNavigationView: React.FC<SidebarNavigationProps> = () => {
                     status={status}
                 />
                 <DarkModeButton />
+                <MenuContent />
             </div>
         </motion.div>
     )
