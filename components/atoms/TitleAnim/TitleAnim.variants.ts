@@ -7,7 +7,7 @@ export const titleVariant: Variants = {
         transition: {
             type: 'tween',
             ease: [.7, .02, .31, .97],
-            duration: 0.8,
+            duration: 1.2,
         }
     },
     animate: {
@@ -16,17 +16,17 @@ export const titleVariant: Variants = {
         transition: {
             type: 'tween',
             ease: [.7, .02, .31, .97],
-            duration: 0.8,
+            duration: 1.2,
             delay: 0.2,
         }
     },
     exit: {
-        y: '-300%',
+        y: '-200%',
         opacity: 0,
         transition: {
             type: 'tween',
             ease: [.7, .02, .31, .97],
-            duration: 0.8,
+            duration: 1.2,
         }
     },
 }

@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+    body {
+        font-family: Montserrat, sans-serif;
+    }
+
     html {
         font-size: 12px;
     }

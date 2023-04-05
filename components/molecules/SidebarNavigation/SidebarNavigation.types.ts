@@ -17,3 +17,15 @@ export type MenuButtonProps = {
 export type MenuContentProps = {
     
 }
+
+export enum MenuHoverItemsEnum {
+    SKILLS = 'skills',
+    ABOUT = 'about',
+    CV = 'cv',
+    WEBSITE = 'website',
+    CONTACTS = 'contacts',
+}
+
+export type AnimatedMenuContentSvgProps = {
+    hoverItem: MenuHoverItemsEnum | null
+}

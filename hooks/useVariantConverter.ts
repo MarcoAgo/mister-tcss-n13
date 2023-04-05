@@ -26,7 +26,6 @@ export const variantConverterFactory = (variants: Variants, theme: ThemeType): a
                     res = { ...res, [v]: value }
                 }
             })
-            console.log(res)
             final = { ...final, [key]: res }
         })
         return final
