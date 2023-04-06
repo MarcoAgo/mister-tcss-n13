@@ -5,6 +5,7 @@ import useMenu from "@/store/menu/useMenu"
 import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
+import { useDebouncedValue } from "rooks"
 import { MenuHoverItemsEnum } from "../SidebarNavigation.types"
 import AnimatedMenuContentSvg from "./AnimatedMenuContentSvg"
 
@@ -26,6 +27,7 @@ const MenuContent: React.FC = () => {
                     href={item.link}
                     onMouseEnter={() => setHover(item.id)}
                     onMouseLeave={() => setHover(null)}
+                    style={{ cursor: 'pointer' }}
                 >
                     <div className="flex items-end mt-6 mb-6 px-[10vw]">
                         <Text type={TextTypeEnum.HEADING4} color={TextColorEnum.TEXT} className="font-medium mr-4">
@@ -42,11 +44,11 @@ const MenuContent: React.FC = () => {
         <AnimatePresence>
             {isOpen && (
                 <div className="absolute right-0 top-0 h-screen w-[calc(100vw-5rem)]">
-                    <div className="flex items-center h-screen">
+                    <div className="flex items-center h-screen justify-between w-full">
                         <div className="w-auto h-screen flex justify-center flex-col">
                             {menuItems.map(renderMenuItems)}
                         </div>
-                        <div className="w-40 h-32">
+                        <div className="w-[25vw] h-[50vh] mr-[10vw]">
                             <AnimatedMenuContentSvg hoverItem={hover} />
                         </div>
                     </div>

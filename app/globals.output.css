@@ -585,6 +585,18 @@ html {
   margin-top: 1.5rem;
 }
 
+.mr-\[15vw\] {
+  margin-right: 15vw;
+}
+
+.mr-\[20vw\] {
+  margin-right: 20vw;
+}
+
+.mr-\[10vw\] {
+  margin-right: 10vw;
+}
+
 .flex {
   display: flex;
 }
@@ -612,6 +624,14 @@ html {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
+}
+
+.h-\[30vh\] {
+  height: 30vh;
 }
 
 .w-2 {
@@ -651,6 +671,18 @@ html {
   width: 100vw;
 }
 
+.w-\[30vw\] {
+  width: 30vw;
+}
+
+.w-\[15vw\] {
+  width: 15vw;
+}
+
+.w-\[25vw\] {
+  width: 25vw;
+}
+
 .origin-center {
   transform-origin: center;
 }
@@ -679,6 +711,10 @@ html {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -704,6 +740,10 @@ html {
 .px-\[10vw\] {
   padding-left: 10vw;
   padding-right: 10vw;
+}
+
+.pr-\[15vw\] {
+  padding-right: 15vw;
 }
 
 .text-2xl {
