@@ -1,6 +1,6 @@
 import { AnimatedMenuContentSvgProps, MenuHoverItemsEnum } from "../SidebarNavigation.types"
 import { motion } from "framer-motion"
-import { useEffect } from "react"
+import useLayout from "@/store/layout/useLayout"
 
 const paths = {
     default: ["M8 2L1.68518 25.1543", "M8.02173 2L14.3153 25.1601", "M21 2L14.6852 25.1543", "M21.0217 2L27.3153 25.1601", "M12 16L36 16", ""],
@@ -14,6 +14,7 @@ const paths = {
 const AnimatedMenuContentSvg: React.FC<AnimatedMenuContentSvgProps> = (props) => {
     const { hoverItem } = props
     const item = hoverItem === null ? 'default' : hoverItem
+    const { theme } = useLayout()
 
     const transition = {
         duration: 0.4,
@@ -30,7 +31,7 @@ const AnimatedMenuContentSvg: React.FC<AnimatedMenuContentSvgProps> = (props) =>
                         initial={{ pathLength: 0, opacity: 0 }}
                         animate={{ d: paths[item][index], opacity: 1, origin: 'center', pathLength: 1, transition: { ...transition, delay: 0.2 } }}
                         exit={{ d: paths[item][index], opacity: 0, origin: 'center', pathLength: 0, transition }}
-                        stroke="black"
+                        stroke={theme === 'light' ? "#D9D9D9" : "black"}
                         stroke-width="3"
                         stroke-linecap="round"
                         style={{ transformOrigin: 'center' }}
