@@ -19,17 +19,7 @@ const SidebarNavigationView: React.FC<SidebarNavigationProps> = () => {
     const pathColor = useThemeColors(ColorsEnum.SUPERLIGHTGRAY, true)
 
     useEffect(() => {
-        if (status === SidebarStatusEnum.HOVER) {
-            pathCtrl.start(status)
-        }
-
-        if (status === SidebarStatusEnum.NONE) {
-            pathCtrl.start(status)
-        }
-
-        if (status === SidebarStatusEnum.CLICK) {
-            pathCtrl.start(status)
-        }
+        void pathCtrl.start(status)
     }, [status])
 
     useEffect(() => {
@@ -56,7 +46,7 @@ const SidebarNavigationView: React.FC<SidebarNavigationProps> = () => {
                     y="0px"
                     width='100%'
                     height='100%'
-                    enable-background={`new 0 0 1200 808`}
+                    enableBackground={`new 0 0 1200 808`}
                     viewBox={`0 0 1200 808`}
                     fill="none"
                     preserveAspectRatio='none'

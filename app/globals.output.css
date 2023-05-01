@@ -591,10 +591,6 @@ html {
   top: 0px;
 }
 
-.left-20 {
-  left: 5rem;
-}
-
 .top-\[100vh\] {
   top: 100vh;
 }
@@ -621,10 +617,6 @@ html {
 
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-
-.ml-20 {
-  margin-left: 5rem;
 }
 
 .mr-4 {
@@ -659,6 +651,10 @@ html {
   height: calc(100% - 5rem);
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -672,12 +668,8 @@ html {
   height: 100vh;
 }
 
-.h-auto {
-  height: auto;
-}
-
-.min-h-screen {
-  min-height: 100vh;
+.min-h-\[150vh\] {
+  min-height: 150vh;
 }
 
 .w-2 {
@@ -871,6 +863,10 @@ html {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .lenis.lenis-smooth {

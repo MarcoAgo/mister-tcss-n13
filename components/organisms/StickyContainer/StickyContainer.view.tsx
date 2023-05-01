@@ -1,18 +1,11 @@
 import { useScrollContext } from "@/components/templates/ScrollContainer/ScrollContainer.view"
 import { useEffect } from "react"
 import { StickyContainerProps } from "./StickyContainer.types"
-import { motion, useMotionValue, useTransform } from "framer-motion"
+import { motion, useMotionValue } from "framer-motion"
 
-const StickyContainerView: React.FC<StickyContainerProps> = (props) => {
+const StickyContainerView: React.FC<StickyContainerProps> = () => {
     const { lenis } = useScrollContext()
     const y = useMotionValue(0)
-    const test = useTransform(y, [0,100], [0,1])
-
-    useEffect(() => {
-        test.on('change', (e) => {
-            console.log(e)
-        })
-    }, [test])
 
     useEffect(() => {
         const handleWheel = (e: WheelEvent) => {
@@ -40,7 +33,7 @@ const StickyContainerView: React.FC<StickyContainerProps> = (props) => {
     }, [])
 
     return (
-        <motion.div style={{ y }} transition={{ duration: 1, ease: 'easeInOut' }} className="absolute top-[100vh] min-h-screen h-auto w-[calc(100vw-5rem)] bg-text pupiu">
+        <motion.div style={{ y, transition: 'all 0.5s ease-out' }} className="fixed top-[100vh] min-h-[150vh] h-auto w-[calc(100vw-5rem)] bg-text pupiu">
             sticky container
         </motion.div>
     )
