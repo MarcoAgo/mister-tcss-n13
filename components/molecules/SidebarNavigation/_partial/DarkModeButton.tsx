@@ -19,8 +19,6 @@ const DarkModeButton: React.FC = (props) => {
         void pathCtrl.start('enter')
     }, [])
 
-    console.log(variantConverterFactory(darkModeButtonVariant, theme))
-
     return (
         <button onClick={handleClick} className="absolute bottom-8">
             <svg width="32" height="32" viewBox="-4 -4 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

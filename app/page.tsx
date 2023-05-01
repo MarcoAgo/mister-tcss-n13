@@ -1,12 +1,13 @@
 'use client'
 
-import { TitleAnim } from "@/components/atoms/TitleAnim"
-import Text from "@/components/atoms/Text"
-import { TextColorEnum, TextTypeEnum } from "@/components/atoms/Text/Text.types"
 import useMenu from "@/store/menu/useMenu"
 import { useAnimationControls } from "framer-motion"
 import { useEffect } from "react"
 import { motion } from "framer-motion"
+import dynamic from "next/dynamic"
+
+// dynamic
+const StickyContainer = dynamic(import( "@/components/organisms/StickyContainer"), { ssr: false })
 
 function Home() {
     const { isOpen } = useMenu()
@@ -24,6 +25,7 @@ function Home() {
                 <div className="w-[calc(100%/3)] h-[calc(100%-5rem)] dark:bg-superlightgray bg-darkgray rounded-[40px]"></div>
                 <div className="w-[calc(100%/3)] h-[calc(100%-5rem)] dark:bg-superlightgray bg-darkgray rounded-[40px]"></div>
             </div>
+            <StickyContainer />
         </motion.main>
     )
 }
